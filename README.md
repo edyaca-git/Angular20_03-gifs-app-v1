@@ -2,6 +2,7 @@
 Este ejercicio es la version 1 
 
 ## Descarga el codigo y ejecuta 
+### git clone https://github.com/edyaca-git/Angular20_03-gifs-app-v1.git
 ### npm install  
 
 ***src/environments/environment.ts*** 
