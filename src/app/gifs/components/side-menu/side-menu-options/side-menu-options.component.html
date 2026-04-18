@@ -1,0 +1,55 @@
+<div id="nav" class="w-full px-6">
+     <!-- bg-blue-800 -->
+
+    @for (item of menuOptions; track item.route) {
+        <a 
+           [routerLink]="item.route"
+           [routerLinkActive]="'bg-blue-800'"
+            class="w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 hover:bg-white/5 transition ease-linear duration-150">
+
+            <div>
+                <!-- Practica no recomendada: -->
+                <!-- <i class="{{ item.icon }}"></i> -->
+
+                 <!-- Esta es una mejor practica para bindear clases dinámicamente, 
+                 en lugar de usar class="{{ item.icon }}"
+                 ya que permite agregar o quitar clases de forma más sencilla 
+                 y legible, además de evitar problemas de seguridad como la inyección de código malicioso.
+                 En este caso, se está bindando la clase del icono de Font Awesome -->
+                <i [class]="item.icon"></i>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-lg font-bold leading-5 text-white">{{ item.label }}</span>
+                <span class="text-sm text-white/50 hidden md:block">{{ item.subLabel }}</span>
+            </div>
+        </a>
+    }
+
+
+    @for (key of gifService.searchHistoryKeys(); track key) {
+        <a 
+           [routerLink]="['/dashboard/history', key]"
+           [routerLinkActive]="'bg-blue-800'"
+            class="w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 hover:bg-white/5 transition ease-linear duration-150">
+
+            <div>
+                <!-- Practica no recomendada: -->
+                <!-- <i class="{{ item.icon }}"></i> -->
+
+                 <!-- Esta es una mejor practica para bindear clases dinámicamente, 
+                 en lugar de usar class="{{ item.icon }}"
+                 ya que permite agregar o quitar clases de forma más sencilla 
+                 y legible, además de evitar problemas de seguridad como la inyección de código malicioso.
+                 En este caso, se está bindando la clase del icono de Font Awesome -->
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-lg font-bold leading-5 text-white">
+                    {{ key }}
+                </span>
+                
+            </div>
+        </a>
+    }    
+
+</div>

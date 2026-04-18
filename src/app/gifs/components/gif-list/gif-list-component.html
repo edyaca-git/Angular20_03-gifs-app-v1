@@ -1,0 +1,10 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <!-- recibo de trending-page.component un array de urls de las imágenes a 
+    mostrar y por cada url recibida se renderiza y envia al componente gif-list-item,
+     y a cada componente gif-list-item se le pasa la url de la imagen a mostrar,
+     entonces por cada url recibida se renderiza
+     -->
+    @for (gif of gifs(); track gif.id) {
+        <gif-list-item [imageUrl]="gif.url" />
+    }           
+</div>
