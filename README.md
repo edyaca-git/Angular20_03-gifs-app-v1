@@ -1,6 +1,9 @@
 # 03-gifs-app version 1.0
 Este ejercicio es la version 1 
 
+## Descarga el codigo y ejecuta 
+### npm install  
+
 ***src/environments/environment.ts*** 
 
 **src/environments/environment.development.ts**
